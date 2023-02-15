@@ -8,50 +8,20 @@
 import Foundation
 
 class HomeViewModel:HomeViewModelType{
+      
+    let doctor:Doctor
     
-    private var doctor:Doctor?{
-        didSet{
-            
-        }
+    init(doctor: Doctor) {
+        self.doctor = doctor
     }
-    
 }
 
 //MARK: - HomeViewModelOutput
 
 extension HomeViewModel{
-    func checkIfUserIsLoggedIn(completion: @escaping (Bool) -> ()) {
-        let userID = Helper.shared.getDoctorID()
-        
-        if userID != nil{
-            /// user is Logged in
-            completion(true)
-        }else{
-            /// user isn't Logged in
-            completion(false)
-        }
-    }
     
-    func fetchSingleDoctor() {
-        Networking.shared.fetchSingleDoctor { result in
-            switch result {
-            case .success(_):
-                
-                if let data = try? result.get(){
-                    do{
-                        let json = try JSONSerialization.jsonObject(with: data,options: .fragmentsAllowed) as! Dictionary<String,Any>
-
-                        guard let doctorDictionary = json["d"] as? Dictionary<String,Any> else {return}
-                        
-                        print("Doctor name is : \(doctorDictionary)")
-                    }catch{
-                        
-                    }
-                }
-            case .failure(let failure):
-                print(failure.localizedDescription)
-            }
-        }
+    func getDoctorName() -> String {
+        guard let name = doctor.name else {return ""}
+    return name
     }
-    
 }

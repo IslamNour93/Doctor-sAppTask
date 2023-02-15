@@ -22,9 +22,9 @@ class RegisterController: UIViewController,UITextFieldDelegate {
     //MARK: - Properties
     
     let viewModel:RegisterViewModelType
-    var indicator = NVActivityIndicatorView(frame: .zero, type: .ballClipRotateMultiple, color: .label , padding: 0)
+    var indicator = NVActivityIndicatorView(frame: .zero, type: .semiCircleSpin, color: .label , padding: 0)
     var genderArray:[String] = Gender.allCases.map {$0.rawValue}
-    var selectedGender : Gender?
+    var selectedGender : String?
     
     //MARK: - Lifecycle
     
@@ -125,11 +125,12 @@ extension RegisterController{
     private func registerDoctor(){
         guard let name = nameTextField.text, let email = emailTextField.text, let practiceMonth = monthsTextField.text, let practiceYear = yearsTextField.text, let selectedGender = selectedGender else {return}
 
-        let newDoctor = NewDoctor(doctor: Doctor(gender: selectedGender, name: name, email: email, practiceMonth: practiceMonth, practiceYear: practiceYear))
+        let newDoctor = Doctor(metadata: nil, doctorsId: nil, name: name, email: email, gender: selectedGender, practiceFrmMonth: practiceMonth, practiceFrmYear: practiceYear)
+        
         self.showActivityIndicator(indicator: indicator, startIndicator: true)
         if viewModel.emailIsValid(email){
             viewModel.registerDoctor(newDoctor: newDoctor) { [weak self] result in
-                
+
                 switch result{
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -181,7 +182,7 @@ extension RegisterController:UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-          return CGSize(width: (genderCollectionView.frame.width/3)-10, height: (genderCollectionView.frame.height-20))
+          return CGSize(width: (genderCollectionView.frame.width/3)-10, height: 40)
     }
 }
 
@@ -195,13 +196,13 @@ extension RegisterController:UICollectionViewDelegate{
         collectionView.selectItem(at: selectedIndexPath, animated: false, scrollPosition: [])
         viewModel.updateGender(genderArray[selectedIndexPath.row])
         
-        selectedGender = Gender(rawValue: genderArray[selectedIndexPath.row])
+        selectedGender =  genderArray[selectedIndexPath.row]
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let gender = genderArray[indexPath.row]
         viewModel.updateGender(gender)
-        selectedGender = Gender(rawValue: gender)
+        selectedGender = gender
     }
 }
 

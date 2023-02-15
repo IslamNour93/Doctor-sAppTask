@@ -50,10 +50,7 @@
                     </userDefinedRuntimeAttributes>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POG-oX-D2u">
-                    <rect key="frame" x="100" y="79" width="72" height="46"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="72" id="kH1-n7-rm8"/>
-                    </constraints>
+                    <rect key="frame" x="99.999999999999986" y="79" width="182.66666666666663" height="25"/>
                     <attributedString key="attributedText">
                         <fragment content="Hello,">
                             <attributes>
@@ -61,15 +58,9 @@
                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                             </attributes>
                         </fragment>
-                        <fragment content="                                  ">
+                        <fragment content="                                 ">
                             <attributes>
                                 <font key="NSFont" metaFont="system" size="17"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                            </attributes>
-                        </fragment>
-                        <fragment content="Pooja!">
-                            <attributes>
-                                <font key="NSFont" size="22" name="ArialRoundedMTBold"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                             </attributes>
                         </fragment>

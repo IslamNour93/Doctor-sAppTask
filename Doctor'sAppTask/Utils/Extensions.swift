@@ -106,7 +106,7 @@ extension UITextField {
     @IBInspectable var maxLength: Int {
         get {
             guard let l = __maxLengths[self] else {
-               return 150 // (global default-limit. or just, Int.max)
+               return 150 
             }
             return l
         }
@@ -152,3 +152,18 @@ extension UIViewController{
         self.present(alert, animated: true, completion: nil)
     }
 }
+
+extension UILabel{
+    func attributedTitle(firstPart:String,secondPart:String){
+        
+        let atts : [NSAttributedString.Key:Any] = [.foregroundColor:UIColor.label,.font:UIFont.systemFont(ofSize: 16)]
+        let attributedTittle = NSMutableAttributedString(string: "\(firstPart) ", attributes: atts)
+        
+        let boldAtts : [NSAttributedString.Key:Any] = [.foregroundColor:UIColor.label,.font:UIFont.boldSystemFont(ofSize: 22)]
+        attributedTittle.append(NSAttributedString(string: secondPart, attributes: boldAtts))
+        
+        attributedText = attributedTittle
+    }
+}
+
+

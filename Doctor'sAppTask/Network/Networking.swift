@@ -15,11 +15,11 @@ import Foundation
     private init() {
     }
     
-     func registerDoctor(doctor:NewDoctor, completion: @escaping (Result<Data?,Error>) -> Void){
+     func registerDoctor(doctor:Doctor, completion: @escaping (Result<Data?,Error>) -> Void){
          guard let url = URL(string: Constans.baseUrl + DoctorApi.registerDoctor.path) else { return }
          let method = DoctorApi.registerDoctor.method
          let headers = DoctorApi.registerDoctor.headers
-         let params = try? doctor.doctor.asDictionary()
+         let params = try? doctor.asDictionary()
          
          AF.request(url, method: method, parameters: params, encoding: JSONEncoding.default, headers: headers).response { response in
              
@@ -36,29 +36,32 @@ import Foundation
          }
      }
      
-     func fetchSingleDoctor(completion: @escaping ((Result<Data?,Error>) -> Void)){
+     func fetchSingleDoctor(completion: @escaping ((Result<BaseModel?,Error>) -> Void)){
          
          guard let uid = Helper.shared.getDoctorID() else {return}
+         
          print("UID is \(uid)")
-
-         guard let url = URL(string: Constans.baseUrl + DoctorApi.fetchSingleDoctor(doctorID: uid).path) else { return }
+         
+         guard let url = URL(string: Constans.baseUrl + DoctorApi.fetchAllDoctors.path) else { return }
          
          
-         let method = DoctorApi.fetchSingleDoctor(doctorID: uid).method
-         let headers = DoctorApi.fetchSingleDoctor(doctorID: uid).headers
+         let method = DoctorApi.fetchAllDoctors.method
+         let headers = DoctorApi.fetchAllDoctors.headers
          
-         AF.request(url, method: method, parameters: [:], encoding: JSONEncoding.default, headers: headers).response { response in
+         AF.request(url, method: method, parameters: nil, encoding: JSONEncoding.default, headers: headers).response { response
+             
+             in
              
              switch response.result {
-             
+                 
              case .success(_):
                  guard let data = response.data else {return}
                  do{
-                     let jsonData = try JSONDecoder().decode(Data.self, from: data)
+                     let jsonData = try JSONDecoder().decode(BaseModel.self, from: data)
                      completion(.success(jsonData))
                  }catch{
                      completion(.failure(error))
-                     print(error.localizedDescription)
+//                     print(error.localizedDescription)
                  }
              case .failure(let error):
                  completion(.failure(error))

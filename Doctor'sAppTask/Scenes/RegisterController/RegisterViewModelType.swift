@@ -16,7 +16,7 @@ protocol RegisterViewModelInput{
     func updatePracticeMonth(_ month:String)
     func updatePracticeYear(_ year:String)
     func emailIsValid(_ email: String) -> Bool
-    func registerDoctor(newDoctor:NewDoctor,completion:@escaping (Result<Data?,Error>) -> Void)
+    func registerDoctor(newDoctor:Doctor,completion:@escaping (Result<Data?,Error>) -> Void)
 }
 
 protocol RegisterViewModelOutput{

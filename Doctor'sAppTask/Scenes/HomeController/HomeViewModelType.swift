@@ -15,6 +15,5 @@ protocol HomeViewModelInput{
 }
 
 protocol HomeViewModelOutput{
-    func checkIfUserIsLoggedIn(completion:@escaping (Bool)->())
-    func fetchSingleDoctor()
+    func getDoctorName()->String
 }

@@ -51,7 +51,7 @@ extension RegisterViewModel{
     
     /// register a new doctor
     ///
-    func registerDoctor(newDoctor: NewDoctor, completion: @escaping (Result<Data?,Error>) -> Void) {
+    func registerDoctor(newDoctor: Doctor, completion: @escaping (Result<Data?,Error>) -> Void) {
         Networking.shared.registerDoctor(doctor: newDoctor) { result in
             
             switch result {

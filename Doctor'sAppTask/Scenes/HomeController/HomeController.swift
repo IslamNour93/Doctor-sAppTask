@@ -31,7 +31,6 @@ class HomeController: UIViewController, UISearchBarDelegate {
     var currentAdsIndex = 0
     
     
-    
 
     //MARK: - Lifecycle
     
@@ -46,14 +45,13 @@ class HomeController: UIViewController, UISearchBarDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        checkIfUserLoggedIn()
-        viewModel.fetchSingleDoctor()
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        checkIfUserLoggedIn()
-//        viewModel.fetchSingleDoctor()
+
+        setDoctorName()
         setupCollectionViews()
         setupTimer()
     }
@@ -81,20 +79,7 @@ class HomeController: UIViewController, UISearchBarDelegate {
 
 extension HomeController{
     
-    private func checkIfUserLoggedIn(){
-        viewModel.checkIfUserIsLoggedIn { isLoggedIn in
-            if isLoggedIn{
-                
-            }else{
-                
-                DispatchQueue.main.async {
-                    let registerController = RegisterController(viewModel: RegisterViewModel())
-                    registerController.modalPresentationStyle = .fullScreen
-                    self.present(registerController, animated: false)
-                }
-            }
-        }
-    }
+   
     
    private func setupCollectionViews(){
         adsCollectionView.register(AdsCollectionCell.Nib(), forCellWithReuseIdentifier: AdsCollectionCell.identifier)
@@ -105,9 +90,13 @@ extension HomeController{
        fingerTipCollectionView.dataSource = self
     }
     
-    func setupTimer(){
+    private func setupTimer(){
         pageController.numberOfPages = arrayOfAds.count
         timer = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(moveToIndexAds), userInfo: nil, repeats: true)
+    }
+    
+    private func setDoctorName(){
+        nameLabel.attributedTitle(firstPart: "Hello,\n", secondPart: "\(viewModel.getDoctorName())")
     }
     
    

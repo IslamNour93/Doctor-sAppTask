@@ -25,7 +25,7 @@
 		39AA42292997367C00EC290C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 39AA42282997367C00EC290C /* Alamofire */; };
 		39B17E6E2999B7C8000AFD8A /* GenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B17E6C2999B7C8000AFD8A /* GenderCell.swift */; };
 		39B17E6F2999B7C8000AFD8A /* GenderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39B17E6D2999B7C8000AFD8A /* GenderCell.xib */; };
-		39EED2A8299736CF006BF068 /* RegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39EED2A7299736CF006BF068 /* RegisterController.xib */; };
+		39DD5ACB299C7D88005016BC /* RegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39DD5ACA299C7D88005016BC /* RegisterController.xib */; };
 		39EED2AA299736FD006BF068 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EED2A9299736FD006BF068 /* HomeViewModel.swift */; };
 		39EED2AC2997370C006BF068 /* HomeViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EED2AB2997370C006BF068 /* HomeViewModelType.swift */; };
 		39EED2AF2997438A006BF068 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EED2AE2997438A006BF068 /* RegisterViewModel.swift */; };
@@ -33,8 +33,14 @@
 		39EED2B429974424006BF068 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EED2B329974424006BF068 /* Api.swift */; };
 		39EED2B6299746B1006BF068 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EED2B5299746B1006BF068 /* Constants.swift */; };
 		39EED2BA299747CA006BF068 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EED2B9299747CA006BF068 /* Networking.swift */; };
-		39EED2BC29975AD1006BF068 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EED2BB29975AD1006BF068 /* Doctor.swift */; };
+		39EED2BC29975AD1006BF068 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EED2BB29975AD1006BF068 /* BaseModel.swift */; };
 		39EED2BE2997699E006BF068 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39EED2BD2997699E006BF068 /* Extensions.swift */; };
+		39F92861299C6B6100D435A4 /* DoctorsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F9285F299C6B6100D435A4 /* DoctorsListController.swift */; };
+		39F92862299C6B6100D435A4 /* DoctorsListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39F92860299C6B6100D435A4 /* DoctorsListController.xib */; };
+		39F92865299C6BCF00D435A4 /* DoctorsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F92863299C6BCF00D435A4 /* DoctorsListCell.swift */; };
+		39F92866299C6BCF00D435A4 /* DoctorsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39F92864299C6BCF00D435A4 /* DoctorsListCell.xib */; };
+		39F92868299C78C500D435A4 /* DoctorsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F92867299C78C500D435A4 /* DoctorsListViewModel.swift */; };
+		39F9286A299C78E300D435A4 /* DoctorsListViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F92869299C78E300D435A4 /* DoctorsListViewModelType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +62,7 @@
 		39AA42252997364800EC290C /* ApiProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiProtocol.swift; sourceTree = "<group>"; };
 		39B17E6C2999B7C8000AFD8A /* GenderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderCell.swift; sourceTree = "<group>"; };
 		39B17E6D2999B7C8000AFD8A /* GenderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenderCell.xib; sourceTree = "<group>"; };
-		39EED2A7299736CF006BF068 /* RegisterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RegisterController.xib; path = "../../../../Doctor'sApp/Doctor'sApp/Scenes/RegisterController.xib"; sourceTree = "<group>"; };
+		39DD5ACA299C7D88005016BC /* RegisterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterController.xib; sourceTree = "<group>"; };
 		39EED2A9299736FD006BF068 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		39EED2AB2997370C006BF068 /* HomeViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelType.swift; sourceTree = "<group>"; };
 		39EED2AE2997438A006BF068 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
@@ -64,8 +70,14 @@
 		39EED2B329974424006BF068 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		39EED2B5299746B1006BF068 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		39EED2B9299747CA006BF068 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		39EED2BB29975AD1006BF068 /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
+		39EED2BB29975AD1006BF068 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		39EED2BD2997699E006BF068 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		39F9285F299C6B6100D435A4 /* DoctorsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsListController.swift; sourceTree = "<group>"; };
+		39F92860299C6B6100D435A4 /* DoctorsListController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorsListController.xib; sourceTree = "<group>"; };
+		39F92863299C6BCF00D435A4 /* DoctorsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsListCell.swift; sourceTree = "<group>"; };
+		39F92864299C6BCF00D435A4 /* DoctorsListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorsListCell.xib; sourceTree = "<group>"; };
+		39F92867299C78C500D435A4 /* DoctorsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsListViewModel.swift; sourceTree = "<group>"; };
+		39F92869299C78E300D435A4 /* DoctorsListViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorsListViewModelType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +96,7 @@
 		3955182A29987C44000F3411 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				39EED2BB29975AD1006BF068 /* Doctor.swift */,
+				39EED2BB29975AD1006BF068 /* BaseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -113,6 +125,7 @@
 				3962D66B2999A1EB009880E0 /* AdsCollectionCell */,
 				3962D66C2999A1F9009880E0 /* FingerTipCollectionCell */,
 				3962D66D2999A207009880E0 /* GendercollectionCell */,
+				39DD5ACC299C94E6005016BC /* DoctorsListCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -180,8 +193,9 @@
 			isa = PBXGroup;
 			children = (
 				3962D65E2999A1C4009880E0 /* Cells */,
-				39EED2AD29974365006BF068 /* HomeController */,
 				39AA422B299736A200EC290C /* RegisterController */,
+				39F9285E299C6B0800D435A4 /* DoctorsList */,
+				39EED2AD29974365006BF068 /* HomeController */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -190,11 +204,20 @@
 			isa = PBXGroup;
 			children = (
 				39AA42222997363D00EC290C /* RegisterController.swift */,
-				39EED2A7299736CF006BF068 /* RegisterController.xib */,
+				39DD5ACA299C7D88005016BC /* RegisterController.xib */,
 				39EED2AE2997438A006BF068 /* RegisterViewModel.swift */,
 				39EED2B029974396006BF068 /* RegisterViewModelType.swift */,
 			);
 			path = RegisterController;
+			sourceTree = "<group>";
+		};
+		39DD5ACC299C94E6005016BC /* DoctorsListCell */ = {
+			isa = PBXGroup;
+			children = (
+				39F92863299C6BCF00D435A4 /* DoctorsListCell.swift */,
+				39F92864299C6BCF00D435A4 /* DoctorsListCell.xib */,
+			);
+			path = DoctorsListCell;
 			sourceTree = "<group>";
 		};
 		39EED2AD29974365006BF068 /* HomeController */ = {
@@ -233,6 +256,17 @@
 				39EED2B5299746B1006BF068 /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		39F9285E299C6B0800D435A4 /* DoctorsList */ = {
+			isa = PBXGroup;
+			children = (
+				39F9285F299C6B6100D435A4 /* DoctorsListController.swift */,
+				39F92860299C6B6100D435A4 /* DoctorsListController.xib */,
+				39F92867299C78C500D435A4 /* DoctorsListViewModel.swift */,
+				39F92869299C78E300D435A4 /* DoctorsListViewModelType.swift */,
+			);
+			path = DoctorsList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,12 +336,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3962D6622999A1D0009880E0 /* AdsCollectionCell.xib in Resources */,
-				39EED2A8299736CF006BF068 /* RegisterController.xib in Resources */,
 				39AA421A2997362C00EC290C /* LaunchScreen.storyboard in Resources */,
 				3962D6662999A1D9009880E0 /* FingerTipCollectionCell.xib in Resources */,
+				39F92866299C6BCF00D435A4 /* DoctorsListCell.xib in Resources */,
 				39B17E6F2999B7C8000AFD8A /* GenderCell.xib in Resources */,
 				39AA42172997362C00EC290C /* Assets.xcassets in Resources */,
+				39DD5ACB299C7D88005016BC /* RegisterController.xib in Resources */,
 				3955183129988459000F3411 /* HomeController.xib in Resources */,
+				39F92862299C6B6100D435A4 /* DoctorsListController.xib in Resources */,
 				39AA42152997362B00EC290C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,15 +356,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				39EED2AC2997370C006BF068 /* HomeViewModelType.swift in Sources */,
-				39EED2BC29975AD1006BF068 /* Doctor.swift in Sources */,
+				39EED2BC29975AD1006BF068 /* BaseModel.swift in Sources */,
 				39EED2B6299746B1006BF068 /* Constants.swift in Sources */,
 				39AA42242997363D00EC290C /* RegisterController.swift in Sources */,
 				3962D6652999A1D9009880E0 /* FingerTipCollectionCell.swift in Sources */,
 				39EED2BA299747CA006BF068 /* Networking.swift in Sources */,
+				39F92865299C6BCF00D435A4 /* DoctorsListCell.swift in Sources */,
+				39F92861299C6B6100D435A4 /* DoctorsListController.swift in Sources */,
 				39EED2AA299736FD006BF068 /* HomeViewModel.swift in Sources */,
+				39F9286A299C78E300D435A4 /* DoctorsListViewModelType.swift in Sources */,
 				3962D6612999A1D0009880E0 /* AdsCollectionCell.swift in Sources */,
 				39EED2AF2997438A006BF068 /* RegisterViewModel.swift in Sources */,
 				39AA42262997364800EC290C /* ApiProtocol.swift in Sources */,
+				39F92868299C78C500D435A4 /* DoctorsListViewModel.swift in Sources */,
 				39AA420E2997362B00EC290C /* AppDelegate.swift in Sources */,
 				39EED2B129974396006BF068 /* RegisterViewModelType.swift in Sources */,
 				39B17E6E2999B7C8000AFD8A /* GenderCell.swift in Sources */,
